@@ -1,12 +1,12 @@
-// var data = {
-//   monday: [],
-//   tuesday: [],
-//   wednesday: [],
-//   thursday: [],
-//   friday: [],
-//   saturday: [],
-//   sunday: []
-// };
+// // var data = {
+// //   monday: [],
+// //   tuesday: [],
+// //   wednesday: [],
+// //   thursday: [],
+// //   friday: [],
+// //   saturday: [],
+// //   sunday: []
+// // };
 
 // var data = {
 //   view: 'add-form',
@@ -47,7 +47,7 @@
 // var $sundayTable = document.querySelector('tbody.sunday');
 
 // $mondayButton.addEventListener('click', function (event) {
-//   createTable(data.monday, $mondayTable);
+
 // });
 
 // $addEntryButton.addEventListener('click', function (event) {
@@ -75,9 +75,11 @@
 //   emptyObject.day = $form.date.value;
 //   emptyObject.time = $form.time.value;
 //   emptyObject.description = $form.description.value;
-//   data.entries.unshift(emptyObject);
-//   addEntry();
-//   mockTable.prepend(createTable(emptyObject));
+
+//   data.monday.unshift(emptyObject);
+//   (createTable(data.monday,));
+//   // addEntry();
+//   // mockTable.prepend(createTable(emptyObject));
 //   $form.reset();
 //   data.nextEntryId++;
 // });
@@ -99,18 +101,19 @@
 //   localStorage.setItem('Dates', todosJSON);
 // });
 
-// function createTable(entry, temp) {
+// function createTable(entry) {
 //   var trFirst = document.createElement('tr');
 //   var tdFirst = document.createElement('td');
 //   var tdFirstSecond = document.createElement('td');
 
-//   temp.appendChild(trFirst);
+//   // temp.appendChild(trFirst);
 
 //   trFirst.appendChild(tdFirst);
 //   trFirst.textContent = entry.time.value;
 //   trFirst.appendChild(tdFirstSecond);
 //   tdFirstSecond.textContent = entry.description.value;
 //   // mockTable.appendChild(table);
+//   return trFirst;
 // }
 
 // // window.addEventListener('DOMContentLoaded', createWholeTable {
