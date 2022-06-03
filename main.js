@@ -1,12 +1,12 @@
-// // var data = {
-// //   monday: [],
-// //   tuesday: [],
-// //   wednesday: [],
-// //   thursday: [],
-// //   friday: [],
-// //   saturday: [],
-// //   sunday: []
-// // };
+// var data = {
+//   monday: [],
+//   tuesday: [],
+//   wednesday: [],
+//   thursday: [],
+//   friday: [],
+//   saturday: [],
+//   sunday: []
+// };
 
 // var data = {
 //   view: 'add-form',
@@ -31,7 +31,7 @@
 // var $taskDescription = document.querySelector('#description');
 // var mockTable = document.querySelector('.mock-table');
 // var $options = document.querySelectorAll('option');
-// var $mondayButton = document.querySelector('div.monday');
+// var $mondayButton = document.querySelector('button.monday');
 // var $tuesdayButton = document.querySelector('div.tuesday');
 // var $wednesdayButton = document.querySelector('div.wednesday');
 // var $thursdayButton = document.querySelector('div.thursday');
@@ -47,12 +47,8 @@
 // var $sundayTable = document.querySelector('tbody.sunday');
 
 // $mondayButton.addEventListener('click', function (event) {
-
+//   createTable(data.monday, $mondayTable);
 // });
-
-// function clickDays(event) {
-
-// }
 
 // $addEntryButton.addEventListener('click', function (event) {
 //   event.target.className = 'open';
@@ -67,13 +63,13 @@
 // });
 
 // $form.addEventListener('submit', function (event) {
-//   var entry = {
-//     day: $form.elements.day.value,
-//     time: $form.elements.time.value,
-//     description: $form.elements.description.value,
-//     entryId: data.nextEntryId
+//   // var entry = {
+//   //   day: $form.elements.day.value,
+//   //   time: $form.elements.time.value,
+//   //   description: $form.elements.description.value,
+//   //   entryId: data.nextEntryId
 
-//   };
+//   // };
 
 //   var emptyObject = {};
 //   emptyObject.day = $form.date.value;
@@ -86,13 +82,13 @@
 //   data.nextEntryId++;
 // });
 
-// function addEntry(event) {
-//   var newTask = {};
-//   newTask.date =
-//   newTask.time = $timeOfDay.value;
-//   newTask.description = $taskDescription.value;
-//   data[$weekday.value].push(newTask);
-// }
+// // function addEntry(event) {
+// //   var newTask = {};
+// //   newTask.date =
+// //   newTask.time = $timeOfDay.value;
+// //   newTask.description = $taskDescription.value;
+// //   data[$weekday.value].push(newTask);
+// // }
 
 // var dataJSON = localStorage.getItem('Dates');
 // if (dataJSON !== null) {
@@ -103,18 +99,23 @@
 //   localStorage.setItem('Dates', todosJSON);
 // });
 
-// function createTable(entry) {
+// function createTable(entry, temp) {
 //   var trFirst = document.createElement('tr');
 //   var tdFirst = document.createElement('td');
 //   var tdFirstSecond = document.createElement('td');
 
-//   trFirst.appendChild(tdFirst);
-//   trFirst.textContent = entry.time;
-//   trFirst.appendChild(tdFirstSecond);
-//   tdFirstSecond.textContent = entry.description;
+//   temp.appendChild(trFirst);
 
-//   return trFirst;
+//   trFirst.appendChild(tdFirst);
+//   trFirst.textContent = entry.time.value;
+//   trFirst.appendChild(tdFirstSecond);
+//   tdFirstSecond.textContent = entry.description.value;
 //   // mockTable.appendChild(table);
 // }
 
-// window.addEventListener('DOMContentLoaded', createWholeTable);
+// // window.addEventListener('DOMContentLoaded', createWholeTable {
+
+// // });
+
+// // createTable(data.monday, $mondayTable);
+// // createTable(data.tuesday, $tuesdayTable);
