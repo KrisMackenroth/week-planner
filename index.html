@@ -52,23 +52,36 @@
     <div class="row justify-row">
       <div class="modal hide">
         <div class="open-modal column-full">
-          <h1>Add Entry</h1>
-          <div class="row">
-            <div class="column-fourth">
-              <input type="date">
+          <form>
+            <h1>Add Entry</h1>
+            <div class="row-indented flex">
+              <div class="column-fourth">
+                <select>
+                  <option value="">Day of Week</option>
+                  <option value="monday">Monday</option>
+                  <option value="tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+              </div>
+              <div class="column-fourth">
+                <input type="time">
+              </div>
             </div>
-            <div class="column-fourth">
-              <input type="time">
+            <div class="row">
+              <div class="column-full">
+                <textarea name="description" id="description" placeholder="Description"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="column-full">
-              <textarea name="description" id="description" placeholder="Description"></textarea>
+            <div class="row submit-row">
+              <button class="close">EXIT</button>
+              <button class="submit">SUBMIT</button>
             </div>
-          </div>
+          </form>
         </div>
-
-
       </div>
     </div>
   </div>
