@@ -1,3 +1,12 @@
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
 .container {
   max-width: 1000px;
   padding: 0 1.5rem;
@@ -86,4 +95,11 @@
 #description {
   resize: none;
   border: solid 1px black;
+}
+
+.table {
+  justify-content: center;
+  width: 80%;
+  text-align: left;
+  border: solid 3px black;
 }
