@@ -21,23 +21,30 @@
 //   nextEntryId: 1
 // };
 
-// // var $addEntryButton = document.querySelector('.add-entry-button');
-// // var $modal = document.querySelector('.modal');
-// // var $closeButton = document.querySelector('.close');
-// // var $overlay = document.querySelector('.overlay');
-// // var $form = document.querySelector('form');
-// // var $weekday = document.querySelector('select option:checked');
-// // var $timeOfDay = document.querySelector('.time');
-// // var $taskDescription = document.querySelector('#description');
-// // var mockTable = document.querySelector('.mock-table');
-// // var $options = document.querySelectorAll('option');
-// // var $mondayButton = document.querySelector('.monday');
-// // var $tuesdayButton = document.querySelector('.tuesday');
-// // var $wednesdayButton = document.querySelector('.wednesday');
-// // var $thursdayButton = document.querySelector('.thursday');
-// // var $fridayButton = document.querySelector('.friday');
-// // var $saturdayButton = document.querySelector('.saturday');
-// // var $sundayButton = document.querySelector('.sunday');
+// var $addEntryButton = document.querySelector('.add-entry-button');
+// var $modal = document.querySelector('.modal');
+// var $closeButton = document.querySelector('.close');
+// var $overlay = document.querySelector('.overlay');
+// var $form = document.querySelector('form');
+// var $weekday = document.querySelector('select option:checked');
+// var $timeOfDay = document.querySelector('.time');
+// var $taskDescription = document.querySelector('#description');
+// var mockTable = document.querySelector('.mock-table');
+// var $options = document.querySelectorAll('option');
+// var $mondayButton = document.querySelector('div.monday');
+// var $tuesdayButton = document.querySelector('div.tuesday');
+// var $wednesdayButton = document.querySelector('div.wednesday');
+// var $thursdayButton = document.querySelector('div.thursday');
+// var $fridayButton = document.querySelector('div.friday');
+// var $saturdayButton = document.querySelector('div.saturday');
+// var $sundayButton = document.querySelector('div.sunday');
+// var $mondayTable = document.querySelector('tbody.monday');
+// var $tuesdayTable = document.querySelector('tbody.tuesday');
+// var $wednesdayTable = document.querySelector('tbody.wednesday');
+// var $thursdayTable = document.querySelector('tbody.thursday');
+// var $fridayTable = document.querySelector('tbody.friday');
+// var $saturdayTable = document.querySelector('tbody.saturday');
+// var $sundayTable = document.querySelector('tbody.sunday');
 
 // $mondayButton.addEventListener('click', function (event) {
 
@@ -60,31 +67,32 @@
 // });
 
 // $form.addEventListener('submit', function (event) {
-//   // var entry = {
-//   //   day: $form.elements.day.value,
-//   //   time: $form.elements.time.value,
-//   //   description: $form.elements.description.value,
-//   //   entryId: data.nextEntryId
-//   // };
+//   var entry = {
+//     day: $form.elements.day.value,
+//     time: $form.elements.time.value,
+//     description: $form.elements.description.value,
+//     entryId: data.nextEntryId
+
+//   };
 
 //   var emptyObject = {};
 //   emptyObject.day = $form.date.value;
 //   emptyObject.time = $form.time.value;
 //   emptyObject.description = $form.description.value;
 //   data.entries.unshift(emptyObject);
-//   // addEntry();
-//   // mockTable.prepend(createTable(emptyObject));
+//   addEntry();
+//   mockTable.prepend(createTable(emptyObject));
 //   $form.reset();
 //   data.nextEntryId++;
 // });
 
-// // function addEntry(event) {
-// //   var newTask = {};
-// //   newTask.date =
-// //   newTask.time = $timeOfDay.value;
-// //   newTask.description = $taskDescription.value;
-// //   data[$weekday.value].push(newTask);
-// // }
+// function addEntry(event) {
+//   var newTask = {};
+//   newTask.date =
+//   newTask.time = $timeOfDay.value;
+//   newTask.description = $taskDescription.value;
+//   data[$weekday.value].push(newTask);
+// }
 
 // var dataJSON = localStorage.getItem('Dates');
 // if (dataJSON !== null) {
@@ -100,19 +108,13 @@
 //   var tdFirst = document.createElement('td');
 //   var tdFirstSecond = document.createElement('td');
 
-//   table.appendChild(thead);
-//   thead.appendChild(trHead);
-//   trHead.appendChild(thHeadOne);
-//   trHead.appendChild(thHeadTwo);
-
-//   tbody.appendChild(trFirst);
 //   trFirst.appendChild(tdFirst);
+//   trFirst.textContent = entry.time;
 //   trFirst.appendChild(tdFirstSecond);
+//   tdFirstSecond.textContent = entry.description;
 
 //   return trFirst;
 //   // mockTable.appendChild(table);
 // }
 
-// window.addEventListener('DOMContentLoaded', function (e) {
-
-// });
+// window.addEventListener('DOMContentLoaded', createWholeTable);
