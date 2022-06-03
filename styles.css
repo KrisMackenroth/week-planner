@@ -36,7 +36,12 @@ tr:nth-child(odd) {
 }
 
 .column-fourth {
-  width: 25%;
+  width: 21%;
+  margin-bottom: 11px;
+}
+
+.days-week {
+  margin-left: 8px;
 }
 
 .flex {
