@@ -30,7 +30,6 @@ $closeButton.addEventListener('click', function (event) {
 });
 
 $form.addEventListener('submit', function (event) {
-  event.defaultPrevented();
   addEntry();
 });
 
@@ -39,20 +38,7 @@ function addEntry(event) {
   newTask.time = $timeOfDay.value;
   newTask.description = $taskDescription.value;
   data[$weekday.value].push(newTask);
-  return data;
 }
-
-///
-// var options = document.querySelectorAll('options');
-
-// test.addEventListener('submit', function (event) {
-//   var newObject = {};
-//   if (options.getAttribute('value') === data.key) {
-//     newObject.time = test.time.value;
-//     newObject.descript = test.descript.value
-//     data.key.unshift(newObject);
-//   }
-// })
 
 var dataJSON = localStorage.getItem('Dates');
 if (dataJSON !== null) {
@@ -62,3 +48,30 @@ window.addEventListener('beforeunload', function (event) {
   var todosJSON = JSON.stringify(data);
   localStorage.setItem('Dates', todosJSON);
 });
+
+// var mockTable = document.querySelector('.mock-table');
+
+// function createTable(event) {
+//   var table = document.createElement('table');
+//   table.classList.add('table');
+//   var thead = document.createElement('thead');
+//   var tr = document.createElement('tr');
+//   var thOne = document.createElement('th');
+//   var timeText = document.createTextNode('Time');
+//   thOne.appendChild(timeText);
+//   var thTwo = document.createElement('th');
+//   var descriptionText = document.createTextNode('Description');
+//   tr.appendChild(thOne);
+//   tr.appendChild(thTwo);
+
+// var tbody = document.createElement('tbody');
+
+// var newTr = document.createElement('tr');
+// var newtd = document.createElement('td');
+// var newtdText = document.createTextNode('');
+
+//   thTwo.appendChild(descriptionText);
+//   thead.appendChild(tr);
+//   table.appendChild(thead);
+//   mockTable.appendChild(table);
+// }
