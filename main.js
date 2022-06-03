@@ -8,6 +8,13 @@ var data = {
   sunday: []
 };
 
+// var data = {
+//   view: 'add-form',
+//   entries: [],
+//   editing: null,
+//   nextEntryId: 1
+// };
+
 var $addEntryButton = document.querySelector('.add-entry-button');
 var $modal = document.querySelector('.modal');
 var $closeButton = document.querySelector('.close');
@@ -16,6 +23,7 @@ var $form = document.querySelector('form');
 var $weekday = document.querySelector('select.days');
 var $timeOfDay = document.querySelector('.time');
 var $taskDescription = document.querySelector('#description');
+var mockTable = document.querySelector('.mock-table');
 
 $addEntryButton.addEventListener('click', function (event) {
   event.target.className = 'open';
@@ -30,7 +38,18 @@ $closeButton.addEventListener('click', function (event) {
 });
 
 $form.addEventListener('submit', function (event) {
+  var entry = {
+    day: $form.elements.day.value,
+    time: $form.elements.time.value,
+    description: $form.elements.description.value,
+    entryId: data.nextEntryId
+  };
+
   addEntry();
+  mockTable.prepend(createTable(entry));
+
+  $form.reset();
+  data.nextEntryId++;
 });
 
 function addEntry(event) {
@@ -49,29 +68,31 @@ window.addEventListener('beforeunload', function (event) {
   localStorage.setItem('Dates', todosJSON);
 });
 
-// var mockTable = document.querySelector('.mock-table');
+function createTable(entry) {
+  var table = document.createElement('table');
+  table.classList.add('table');
+  var thead = document.createElement('thead');
+  var trHead = document.createElement('tr');
+  var thHeadOne = document.createElement('th');
+  thHeadOne.textContent = 'Time';
+  var thHeadTwo = document.createElement('th');
+  thHeadTwo.textContent = 'Description';
 
-// function createTable(event) {
-//   var table = document.createElement('table');
-//   table.classList.add('table');
-//   var thead = document.createElement('thead');
-//   var tr = document.createElement('tr');
-//   var thOne = document.createElement('th');
-//   var timeText = document.createTextNode('Time');
-//   thOne.appendChild(timeText);
-//   var thTwo = document.createElement('th');
-//   var descriptionText = document.createTextNode('Description');
-//   tr.appendChild(thOne);
-//   tr.appendChild(thTwo);
+  var tbody = document.createElement('tbody');
 
-// var tbody = document.createElement('tbody');
+  var trFirst = document.createElement('tr');
+  var tdFirst = document.createElement('td');
+  var tdFirstSecond = document.createElement('td');
 
-// var newTr = document.createElement('tr');
-// var newtd = document.createElement('td');
-// var newtdText = document.createTextNode('');
+  table.appendChild(thead);
+  thead.appendChild(trHead);
+  trHead.appendChild(thHeadOne);
+  trHead.appendChild(thHeadTwo);
 
-//   thTwo.appendChild(descriptionText);
-//   thead.appendChild(tr);
-//   table.appendChild(thead);
-//   mockTable.appendChild(table);
-// }
+  tbody.appendChild(trFirst);
+  trFirst.appendChild(tdFirst);
+  trFirst.appendChild(tdFirstSecond);
+
+  return table;
+  // mockTable.appendChild(table);
+}
