@@ -1,29 +1,30 @@
-var data = {
-  monday: [],
-  tuesday: [],
-  wednesday: [],
-  thursday: [],
-  friday: [],
-  saturday: [],
-  sunday: []
-};
-
 // var data = {
-//   view: 'add-form',
-//   entries: [],
-//   editing: null,
-//   nextEntryId: 1
+//   monday: [],
+//   tuesday: [],
+//   wednesday: [],
+//   thursday: [],
+//   friday: [],
+//   saturday: [],
+//   sunday: []
 // };
+
+var data = {
+  view: 'add-form',
+  entries: [],
+  editing: null,
+  nextEntryId: 1
+};
 
 var $addEntryButton = document.querySelector('.add-entry-button');
 var $modal = document.querySelector('.modal');
 var $closeButton = document.querySelector('.close');
 var $overlay = document.querySelector('.overlay');
-var $form = document.querySelector('form');
-var $weekday = document.querySelector('select.days');
-var $timeOfDay = document.querySelector('.time');
-var $taskDescription = document.querySelector('#description');
-var mockTable = document.querySelector('.mock-table');
+// var $form = document.querySelector('form');
+// var $weekday = document.querySelector('select option:checked');
+// var $timeOfDay = document.querySelector('.time');
+// var $taskDescription = document.querySelector('#description');
+// var mockTable = document.querySelector('.mock-table');
+// var $options = document.querySelectorAll('option');
 
 $addEntryButton.addEventListener('click', function (event) {
   event.target.className = 'open';
@@ -37,27 +38,33 @@ $closeButton.addEventListener('click', function (event) {
   $modal.className = 'modal hide';
 });
 
-$form.addEventListener('submit', function (event) {
-  var entry = {
-    day: $form.elements.day.value,
-    time: $form.elements.time.value,
-    description: $form.elements.description.value,
-    entryId: data.nextEntryId
-  };
+// $form.addEventListener('submit', function (event) {
+// var entry = {
+//   day: $form.elements.day.value,
+//   time: $form.elements.time.value,
+//   description: $form.elements.description.value,
+//   entryId: data.nextEntryId
+// };
 
-  addEntry();
-  mockTable.prepend(createTable(entry));
+//   var emptyObject = {};
+//   emptyObject.day = $form.date.value;
+//   emptyObject.time = $form.time.value;
+//   emptyObject.description = $form.description.value;
+//   data.entries.unshift(emptyObject);
+//   // addEntry();
+//   mockTable.prepend(createTable(emptyObject));
 
-  $form.reset();
-  data.nextEntryId++;
-});
+//   $form.reset();
+//   data.nextEntryId++;
+// });
 
-function addEntry(event) {
-  var newTask = {};
-  newTask.time = $timeOfDay.value;
-  newTask.description = $taskDescription.value;
-  data[$weekday.value].push(newTask);
-}
+// function addEntry(event) {
+//   var newTask = {};
+//   newTask.date =
+//   newTask.time = $timeOfDay.value;
+//   newTask.description = $taskDescription.value;
+//   data[$weekday.value].push(newTask);
+// }
 
 var dataJSON = localStorage.getItem('Dates');
 if (dataJSON !== null) {
@@ -68,31 +75,20 @@ window.addEventListener('beforeunload', function (event) {
   localStorage.setItem('Dates', todosJSON);
 });
 
-function createTable(entry) {
-  var table = document.createElement('table');
-  table.classList.add('table');
-  var thead = document.createElement('thead');
-  var trHead = document.createElement('tr');
-  var thHeadOne = document.createElement('th');
-  thHeadOne.textContent = 'Time';
-  var thHeadTwo = document.createElement('th');
-  thHeadTwo.textContent = 'Description';
+// function createTable(entry) {
+//   var trFirst = document.createElement('tr');
+//   var tdFirst = document.createElement('td');
+//   var tdFirstSecond = document.createElement('td');
 
-  var tbody = document.createElement('tbody');
+//   table.appendChild(thead);
+//   thead.appendChild(trHead);
+//   trHead.appendChild(thHeadOne);
+//   trHead.appendChild(thHeadTwo);
 
-  var trFirst = document.createElement('tr');
-  var tdFirst = document.createElement('td');
-  var tdFirstSecond = document.createElement('td');
+//   tbody.appendChild(trFirst);
+//   trFirst.appendChild(tdFirst);
+//   trFirst.appendChild(tdFirstSecond);
 
-  table.appendChild(thead);
-  thead.appendChild(trHead);
-  trHead.appendChild(thHeadOne);
-  trHead.appendChild(thHeadTwo);
-
-  tbody.appendChild(trFirst);
-  trFirst.appendChild(tdFirst);
-  trFirst.appendChild(tdFirstSecond);
-
-  return table;
-  // mockTable.appendChild(table);
-}
+//   return trFirst;
+//   // mockTable.appendChild(table);
+// }
