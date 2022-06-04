@@ -26,7 +26,7 @@
 // var $closeButton = document.querySelector('.close');
 // var $overlay = document.querySelector('.overlay');
 // var $form = document.querySelector('form');
-// var $weekday = document.querySelector('select option:checked');
+// var $weekday = document.querySelector('select');
 // var $timeOfDay = document.querySelector('.time');
 // var $taskDescription = document.querySelector('#description');
 // var mockTable = document.querySelector('.mock-table');
@@ -45,10 +45,37 @@
 // var $fridayTable = document.querySelector('tbody.friday');
 // var $saturdayTable = document.querySelector('tbody.saturday');
 // var $sundayTable = document.querySelector('tbody.sunday');
+// var $mondayView = document.querySelector('monday-container');
+// var $tuesdayView = document.querySelector('tuesday-container');
+// var $wednesdayView = document.querySelector('wednesday-container');
+// var $thursdayView = document.querySelector('thursday-container');
+// var $fridayView = document.querySelector('friday-container');
+// var $saturdayView = document.querySelector('saturday-container');
+// var $sundayView = document.querySelector('sunday-container');
 
-// $mondayButton.addEventListener('click', function (event) {
+// $mondayButton.addEventListener('click', makeMonday);
 
-// });
+// function makeMonday() {
+//   $mondayView.className = 'container monday-container';
+//   $tuesdayView.className = 'container tuesday-container hide';
+//   $wednesdayView.className = 'container wednesday-container hide';
+//   $thursdayView.className = 'container thursday-container hide';
+//   $fridayView.className = 'container friday-container hide';
+//   $saturdayView.className = 'container saturday-container hide';
+//   $sundayView.className = 'container sunday-container hide';
+// }
+
+// function makeTuesday() {
+//   $mondayView.className = 'container monday-container hide';
+//   $tuesdayView.className = 'container tuesday-container';
+//   $wednesdayView.className = 'container wednesday-container hide';
+//   $thursdayView.className = 'container thursday-container hide';
+//   $fridayView.className = 'container friday-container hide';
+//   $saturdayView.className = 'container saturday-container hide';
+//   $sundayView.className = 'container sunday-container hide';
+// }
+
+// $tuesdayButton.addEventListener('click', makeTuesday);
 
 // $addEntryButton.addEventListener('click', function (event) {
 //   event.target.className = 'open';
@@ -63,34 +90,24 @@
 // });
 
 // $form.addEventListener('submit', function (event) {
-//   // var entry = {
-//   //   day: $form.elements.day.value,
-//   //   time: $form.elements.time.value,
-//   //   description: $form.elements.description.value,
-//   //   entryId: data.nextEntryId
-
-//   // };
-
-//   var emptyObject = {};
-//   emptyObject.day = $form.date.value;
-//   emptyObject.time = $form.time.value;
-//   emptyObject.description = $form.description.value;
-
-//   data.monday.unshift(emptyObject);
-//   (createTable(data.monday,));
+//   event.preventDefault();
+//   // var emptyObject = {};
+//   var newTask = {};
+//   newTask.time = $timeOfDay.value;
+//   newTask.description = $taskDescription.value;
+//   data[$weekday.value].push(newTask);
+//   if ($weekday.value === 'monday') {
+//     $mondayTable.appendChild(createTable(newTask));
+//   } else if ($weekday.value === 'tuesday') {
+//     $tuesdayTable.appendChild(createTable(newTask));
+//   }
+//   // data.monday.unshift(emptyObject);
+//   // (createTable(data.monday));
 //   // addEntry();
 //   // mockTable.prepend(createTable(emptyObject));
 //   $form.reset();
 //   data.nextEntryId++;
 // });
-
-// // function addEntry(event) {
-// //   var newTask = {};
-// //   newTask.date =
-// //   newTask.time = $timeOfDay.value;
-// //   newTask.description = $taskDescription.value;
-// //   data[$weekday.value].push(newTask);
-// // }
 
 // var dataJSON = localStorage.getItem('Dates');
 // if (dataJSON !== null) {
@@ -109,9 +126,9 @@
 //   // temp.appendChild(trFirst);
 
 //   trFirst.appendChild(tdFirst);
-//   trFirst.textContent = entry.time.value;
+//   trFirst.textContent = entry.time;
 //   trFirst.appendChild(tdFirstSecond);
-//   tdFirstSecond.textContent = entry.description.value;
+//   tdFirstSecond.textContent = entry.description;
 //   // mockTable.appendChild(table);
 //   return trFirst;
 // }
